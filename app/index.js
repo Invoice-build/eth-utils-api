@@ -12,7 +12,7 @@ app.listen(PORT, HOST, () => {
 })
 
 app.get('', function (req, res) {
-  res.send('Eth Utils App')
+  res.send({ app: 'Eth Utils API' })
 })
 
 app.get('/erc20/decode/:input', function (req, res) {
