@@ -16,6 +16,8 @@ COPY package.json yarn.* ./
 # Note that we're installing all dependencies, unlike the buildpack
 RUN yarn install
 
+COPY . ./
+
 # ---------------
 
 # Create a second-stage which copies the /dist folder
