@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  namespace: invoice-build
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eth-utils-api
+  template:
+    metadata:
+      labels:
+        app: eth-utils-api
+    spec:
+      containers:
+        - name: eth-utils-api
+          image: <IMAGE>
+          ports:
+            - containerPort: 3001
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: regcred
